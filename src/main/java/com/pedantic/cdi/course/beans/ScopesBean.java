@@ -11,7 +11,7 @@ import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class ScopesBeans {
+public class ScopesBean {
 
     //Field injection point
     @Inject
@@ -25,7 +25,7 @@ public class ScopesBeans {
 
     //Constructor injection point
     @Inject
-    private ScopesBeans(DependentScope dependentScope) {
+    private ScopesBean(DependentScope dependentScope) {
         this.dependentScope = dependentScope;
     }
 
