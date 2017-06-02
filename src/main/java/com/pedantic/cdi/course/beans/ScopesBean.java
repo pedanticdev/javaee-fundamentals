@@ -1,17 +1,18 @@
 package com.pedantic.cdi.course.beans;
 
+import com.pedantic.cdi.course.qualifiers.Web;
 import com.pedantic.cdi.course.scopes.ApplicationScope;
 import com.pedantic.cdi.course.scopes.DependentScope;
 import com.pedantic.cdi.course.scopes.RequestScope;
 import com.pedantic.cdi.course.scopes.SessionScope;
-import java.io.Serializable;
 
-import javax.faces.view.ViewScoped;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.inject.Named;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-@Named
-@ViewScoped
+@Web
 public class ScopesBean implements Serializable{
 
     //Field injection point
@@ -19,10 +20,21 @@ public class ScopesBean implements Serializable{
     private RequestScope requestScope;
     @Inject
     private ApplicationScope applicationScope;
+    @Inject
+    private Logger logger;
 
     private SessionScope sessionScope;
 
     private DependentScope dependentScope;
+
+    //Lifecyle callback
+    @PostConstruct
+    private void init() {
+        logger.log(Level.INFO, "*******************************************");
+        logger.log(Level.INFO, "Scopes bean called");
+        logger.log(Level.INFO, "********************************************");
+
+    }
 
     //Constructor injection point
     @Inject

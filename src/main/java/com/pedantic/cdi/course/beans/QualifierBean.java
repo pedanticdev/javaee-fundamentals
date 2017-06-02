@@ -3,14 +3,12 @@ package com.pedantic.cdi.course.beans;
 import com.pedantic.cdi.course.interfaces.Salute;
 import com.pedantic.cdi.course.qualifiers.Police;
 import com.pedantic.cdi.course.qualifiers.Soldier;
+import com.pedantic.cdi.course.qualifiers.Web;
+
+import javax.inject.Inject;
 import java.io.Serializable;
 
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-
-@Named
-@ViewScoped
+@Web
 public class QualifierBean implements Serializable {
 
     @Inject
