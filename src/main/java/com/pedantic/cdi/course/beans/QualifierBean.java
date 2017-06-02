@@ -21,13 +21,13 @@ public class QualifierBean {
 
     private String police;
     private String soldier;
+    private String name;
 
-
-    public void policeSalutation(String name) {
+    public void policeSalutation() {
         police = policeSalute.salute(name);
     }
 
-    public void solidierSalutation(String name) {
+    public void solidierSalutation() {
         soldier = soldierSalute.salute(name);
     }
 
@@ -45,5 +45,13 @@ public class QualifierBean {
 
     public void setSoldier(String soldier) {
         this.soldier = soldier;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
