@@ -1,6 +1,8 @@
 package com.pedantic.cdi.course.scopes;
 
-public class DependentScope {
+import java.io.Serializable;
+
+public class DependentScope implements Serializable {
 
     public String getHashCode() {
         return this.hashCode() + " ";

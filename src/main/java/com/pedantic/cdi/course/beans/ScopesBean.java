@@ -4,6 +4,7 @@ import com.pedantic.cdi.course.scopes.ApplicationScope;
 import com.pedantic.cdi.course.scopes.DependentScope;
 import com.pedantic.cdi.course.scopes.RequestScope;
 import com.pedantic.cdi.course.scopes.SessionScope;
+import java.io.Serializable;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -11,7 +12,7 @@ import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class ScopesBean {
+public class ScopesBean implements Serializable{
 
     //Field injection point
     @Inject

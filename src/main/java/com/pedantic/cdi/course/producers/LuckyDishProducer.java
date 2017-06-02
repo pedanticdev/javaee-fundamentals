@@ -3,19 +3,22 @@ package com.pedantic.cdi.course.producers;
 import javax.enterprise.inject.Produces;
 import java.util.ArrayList;
 import java.util.List;
+import javax.enterprise.context.Dependent;
 
-public class GreetingProducer {
+public class LuckyDishProducer {
 
     /**
-     * Producer methods are very useful for when the concrete type to
-     * to be injected varies at runtime. This provides polymorphic injection
-     * at runtime. Think of CDI producers as the Factory Pattern.
+     * Producer methods are very useful for when the concrete type to to be
+     * injected varies at runtime. This provides polymorphic injection at
+     * runtime. Think of CDI producers as the Factory Pattern.
      *
-     * Producers are also a way to transform beans we don't own into contextual instances
+     * Producers are also a way to transform beans we don't own into contextual
+     * instances
      *
      * Default scope of produced object is Dependent Scope. Could be altered by
      * annotating the method accordingly.
-     **/
+     *
+     */
     @Produces
     public List<String> getLuckyDish() {
 

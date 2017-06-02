@@ -19,9 +19,9 @@
 <h:body>
     <h:form>
         <h:outputLabel value="Name" for="name"/>
-        <h:inputText id="name" value="#{qualifierWithValueBean}"/>
+        <h:inputText id="name" value="#{qualifierWithValueBean.name}"/>
 
-        <h:outputLabel value="#{qualifierWithValueBean.police}"/>
+        <h:outputLabel value="#{qualifierWithValueBean.police}"/><br/>
 
 
         <h:commandButton value="Salute Police" >
@@ -30,7 +30,20 @@
         </h:commandButton>
 
 
-        <h:commandButton value="Salute Soldier" >
+      
+    </h:form>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+     <h:form>
+        <h:outputLabel value="Name" for="name"/>
+        <h:inputText id="name" value="#{qualifierWithValueBean.name}"/>
+
+        <h:outputLabel value="#{qualifierWithValueBean.soldier}"/> <br/>
+
+
+          <h:commandButton value="Salute Soldier" >
             <f:ajax execute="@form" listener="#{qualifierWithValueBean.solidierSalutation}"
                     render="@form"/>
         </h:commandButton>

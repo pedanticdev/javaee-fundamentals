@@ -2,6 +2,8 @@ package com.pedantic.cdi.course.beans;
 
 import com.pedantic.cdi.course.interfaces.Salute;
 import com.pedantic.cdi.course.qualifiers.Police;
+import com.pedantic.cdi.course.qualifiers.Soldier;
+import java.io.Serializable;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -9,14 +11,14 @@ import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class QualifierBean {
+public class QualifierBean implements Serializable {
 
     @Inject
     @Police
     private Salute policeSalute;
 
     @Inject
-    @Police
+    @Soldier
     private Salute soldierSalute;
 
     private String police;

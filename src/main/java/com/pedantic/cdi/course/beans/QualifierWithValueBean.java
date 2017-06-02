@@ -2,6 +2,7 @@ package com.pedantic.cdi.course.beans;
 
 import com.pedantic.cdi.course.interfaces.Salute;
 import com.pedantic.cdi.course.qualifiers.ServiceMan;
+import java.io.Serializable;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -9,7 +10,8 @@ import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class QualifierWithValueBean {
+public class QualifierWithValueBean implements Serializable {
+
     @Inject
     @ServiceMan(value = ServiceMan.ServiceType.POLICE)
     private Salute policeSalute;
@@ -20,13 +22,13 @@ public class QualifierWithValueBean {
 
     private String police;
     private String soldier;
+    private String name;
 
-
-    public void policeSalutation(String name) {
+    public void policeSalutation() {
         police = policeSalute.salute(name);
     }
 
-    public void solidierSalutation(String name) {
+    public void solidierSalutation() {
         soldier = soldierSalute.salute(name);
     }
 
@@ -45,4 +47,13 @@ public class QualifierWithValueBean {
     public void setSoldier(String soldier) {
         this.soldier = soldier;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
