@@ -1,4 +1,4 @@
-package com.pedantic.cdi.course.qualifiers;
+package com.pedantic.cdi.course.annotations;
 
 import javax.enterprise.inject.Stereotype;
 import javax.faces.view.ViewScoped;

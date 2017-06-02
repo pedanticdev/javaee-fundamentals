@@ -1,6 +1,6 @@
 package com.pedantic.cdi.course.sessionbeans;
 
-import com.pedantic.cdi.course.qualifiers.Logged;
+import com.pedantic.cdi.course.annotations.Logged;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;

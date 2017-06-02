@@ -1,6 +1,6 @@
 package com.pedantic.cdi.course.beans;
 
-import com.pedantic.cdi.course.qualifiers.Web;
+import com.pedantic.cdi.course.annotations.Web;
 import com.pedantic.cdi.course.scopes.ApplicationScope;
 import com.pedantic.cdi.course.scopes.DependentScope;
 import com.pedantic.cdi.course.scopes.RequestScope;

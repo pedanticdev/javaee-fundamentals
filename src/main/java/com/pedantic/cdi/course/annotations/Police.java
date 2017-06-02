@@ -1,4 +1,4 @@
-package com.pedantic.cdi.course.qualifiers;
+package com.pedantic.cdi.course.annotations;
 
 import javax.inject.Qualifier;
 import java.lang.annotation.ElementType;

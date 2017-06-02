@@ -1,8 +1,8 @@
 package com.pedantic.cdi.course.beans;
 
 import com.pedantic.cdi.course.interfaces.Salute;
-import com.pedantic.cdi.course.qualifiers.ServiceMan;
-import com.pedantic.cdi.course.qualifiers.Web;
+import com.pedantic.cdi.course.annotations.ServiceMan;
+import com.pedantic.cdi.course.annotations.Web;
 
 import javax.inject.Inject;
 import java.io.Serializable;

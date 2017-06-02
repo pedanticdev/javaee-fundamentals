@@ -1,7 +1,8 @@
 package com.pedantic.cdi.course.beans;
 
-import com.pedantic.cdi.course.qualifiers.Logged;
+import com.pedantic.cdi.course.annotations.Logged;
 
+import javax.annotation.Priority;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
@@ -13,6 +14,7 @@ import java.util.logging.Logger;
 //Bind interceptor to this class
 @Logged
 @Interceptor
+@Priority(Interceptor.Priority.APPLICATION)
 public class LoggedInterceptor {
 
     @Inject

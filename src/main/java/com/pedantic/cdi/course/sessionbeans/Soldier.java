@@ -1,13 +1,13 @@
 package com.pedantic.cdi.course.sessionbeans;
 
 import com.pedantic.cdi.course.interfaces.Salute;
-import com.pedantic.cdi.course.qualifiers.ServiceMan;
+import com.pedantic.cdi.course.annotations.ServiceMan;
 
 import javax.ejb.Stateless;
 
 @Stateless
 @ServiceMan(value = ServiceMan.ServiceType.SOLDIER)
-@com.pedantic.cdi.course.qualifiers.Soldier
+@com.pedantic.cdi.course.annotations.Soldier
 public class Soldier implements Salute {
 
     @Override
