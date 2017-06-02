@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 @ServiceMan(value = ServiceMan.ServiceType.SOLDIER)
 @com.pedantic.cdi.course.qualifiers.Soldier
 public class Soldier implements Salute {
+
     @Override
     public String salute(String name) {
         return "Aye Aye Capt'n " + name;
