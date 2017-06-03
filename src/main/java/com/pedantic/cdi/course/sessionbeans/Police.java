@@ -5,6 +5,7 @@ import com.pedantic.cdi.course.annotations.ServiceMan;
 
 import javax.ejb.Stateful;
 import java.io.Serializable;
+import java.text.MessageFormat;
 
 @Stateful
 @ServiceMan(value = ServiceMan.ServiceType.POLICE)
@@ -12,6 +13,6 @@ import java.io.Serializable;
 public class Police implements Salute, Serializable {
     @Override
     public String salute(String name) {
-        return "Yes sir! " + name;
+        return MessageFormat.format("Yes sir! ", name);
     }
 }

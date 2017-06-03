@@ -4,6 +4,7 @@ import com.pedantic.cdi.course.interfaces.Salute;
 import com.pedantic.cdi.course.annotations.ServiceMan;
 
 import javax.ejb.Stateless;
+import java.text.MessageFormat;
 
 @Stateless
 @ServiceMan(value = ServiceMan.ServiceType.SOLDIER)
@@ -12,7 +13,7 @@ public class Soldier implements Salute {
 
     @Override
     public String salute(String name) {
-        return "Aye Aye Capt'n " + name;
+        return MessageFormat.format("Aye Aye Capt'n {0}", name);
     }
 
 }

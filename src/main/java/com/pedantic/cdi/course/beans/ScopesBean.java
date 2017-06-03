@@ -7,6 +7,7 @@ import com.pedantic.cdi.course.scopes.RequestScope;
 import com.pedantic.cdi.course.scopes.SessionScope;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -20,6 +21,8 @@ public class ScopesBean implements Serializable{
     private RequestScope requestScope;
     @Inject
     private ApplicationScope applicationScope;
+
+    //Producer object
     @Inject
     private Logger logger;
 
@@ -34,6 +37,13 @@ public class ScopesBean implements Serializable{
         logger.log(Level.INFO, "Scopes bean called");
         logger.log(Level.INFO, "********************************************");
 
+    }
+
+    @PreDestroy
+    private void kill() {
+        logger.log(Level.INFO, "*******************************************");
+        logger.log(Level.INFO, "Scopes bean gonna be killed :-( ");
+        logger.log(Level.INFO, "********************************************");
     }
 
     //Constructor injection point

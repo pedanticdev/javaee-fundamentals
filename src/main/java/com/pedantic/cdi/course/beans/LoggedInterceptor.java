@@ -2,6 +2,8 @@ package com.pedantic.cdi.course.beans;
 
 import com.pedantic.cdi.course.annotations.Logged;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Priority;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
@@ -28,7 +30,17 @@ public class LoggedInterceptor {
     @AroundInvoke
     public Object logMethodCall(InvocationContext context) throws Exception {
         //Log for example user who called method and time
-        logger.log(Level.INFO, "User " + user + " invoked " + context.getMethod().getName() + " method at " + LocalDate.now());
+        logger.log(Level.INFO, "User {0} invoked {1} method at {2}", new Object[]{user, context.getMethod().getName(), LocalDate.now()});
         return context.proceed();
+    }
+
+    @PostConstruct
+    private void init(InvocationContext context) {
+
+    }
+
+    @PreDestroy
+    private void kill(InvocationContext context) {
+
     }
 }
