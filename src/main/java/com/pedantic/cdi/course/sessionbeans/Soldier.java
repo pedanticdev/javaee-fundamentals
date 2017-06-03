@@ -13,7 +13,7 @@ public class Soldier implements Salute {
 
     @Override
     public String salute(String name) {
-        return MessageFormat.format("Aye Aye Capt'n {0}", name);
+        return MessageFormat.format("Aye Aye Capt {0}", name);
     }
 
 }

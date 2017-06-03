@@ -16,9 +16,11 @@ public class AuditedService {
 
     @PostConstruct
     private void init() {
-        auditedMethod();
+       
     }
 
+    //This method will only be called after the Logged Interceptor has returned ie InvocationContext#proceed
+    //This annotation could also be put on the class, making every method of the class intercepted
     @Logged
     public void auditedMethod() {
         logger.log(Level.INFO, "OK so we are able to call this method after auditing took place");

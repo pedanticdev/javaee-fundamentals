@@ -5,6 +5,7 @@ import com.pedantic.cdi.course.scopes.ApplicationScope;
 import com.pedantic.cdi.course.scopes.DependentScope;
 import com.pedantic.cdi.course.scopes.RequestScope;
 import com.pedantic.cdi.course.scopes.SessionScope;
+import com.pedantic.cdi.course.sessionbeans.AuditedService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -14,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Web
-public class ScopesBean implements Serializable{
+public class ScopesBean implements Serializable {
 
     //Field injection point
     @Inject
@@ -22,6 +23,9 @@ public class ScopesBean implements Serializable{
     @Inject
     private ApplicationScope applicationScope;
 
+    @Inject
+    private AuditedService auditedService;
+    
     //Producer object
     @Inject
     private Logger logger;
@@ -33,6 +37,7 @@ public class ScopesBean implements Serializable{
     //Lifecyle callback
     @PostConstruct
     private void init() {
+        auditedService.auditedMethod();
         logger.log(Level.INFO, "*******************************************");
         logger.log(Level.INFO, "Scopes bean called");
         logger.log(Level.INFO, "********************************************");

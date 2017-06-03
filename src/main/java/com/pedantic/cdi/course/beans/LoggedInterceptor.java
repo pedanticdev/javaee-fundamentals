@@ -34,13 +34,13 @@ public class LoggedInterceptor {
         return context.proceed();
     }
 
-    @PostConstruct
-    private void init(InvocationContext context) {
-
-    }
-
-    @PreDestroy
-    private void kill(InvocationContext context) {
-
-    }
+//    @PostConstruct
+//    private void init(InvocationContext context) {
+//
+//    }
+//
+//    @PreDestroy
+//    private void kill(InvocationContext context) {
+//
+//    }
 }
